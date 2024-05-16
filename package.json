@@ -17,6 +17,7 @@
     "mocha": "^10.4.0"
   },
   "devDependencies": {
+    "colors": "^1.4.0",
     "prettier": "3.2.5"
   }
 }
