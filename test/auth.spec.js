@@ -13,6 +13,7 @@ describe('AUTHENTIFICATION',  () => {
         expect(res.status).to.eq(200)
         expect(res.body.message).to.eq('Auth success')
         console.log(res.body);
+        console.log(res.body);
     })
     
 });
