@@ -13,6 +13,7 @@
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",
     "@babel/register": "^7.23.7",
+    "@faker-js/faker": "^8.4.1",
     "chai": "^4.4.1",
     "dotenv": "^16.4.5",
     "mocha": "^10.4.0"
