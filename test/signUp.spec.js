@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import { signUp } from '../helpers/generalHelper';
 import { user } from '../helpers/user';
-import exp from 'constants';
 
-describe.only('SIGNUP', () => {
+
+describe('SIGNUP', () => {
   describe('SIGNUP POSITIVE', () => {
     let res;
 

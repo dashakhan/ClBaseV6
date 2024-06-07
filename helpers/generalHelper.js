@@ -1,7 +1,8 @@
 import request from 'supertest'
-import {user} from './user' 
+import {user} from './user'
+const chance = require('chance').Chance() 
 
-
+const newEmail = 'user_' + Date.now() + '@gmail.com'
 
 export function login(email, password){
     return request(process.env.BASE_URL)
@@ -19,11 +20,27 @@ export async function signUp(user){
 
 }
 
-// export async function signUpNegative(user){
-//     return await request(process.env.BASE_URL)
-//     .post('user/register')
-//     .send(user)
 
-// }
+export async function signUpNew(firstName, lastName, email, password = process.env.PASSWORD){
+    return request(process.env.BASE_URL)
+    .post('/user')
+    .send({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password
+
+    })
+
+}
+
+
+export function register(data){
+    return request(process.env.BASE_URL)
+    .post('/user')
+    .send(data)
+}
+
+
 
 
