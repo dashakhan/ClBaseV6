@@ -3,7 +3,7 @@ const chance = require('chance').Chance();
 import { register } from '../helpers/generalHelper';
 import { generateSignUpBody } from '../helpers/constants';
 
-describe.only('REG', () => {
+describe('REG', () => {
   let res;
 
   describe('REGISTER POSITIVE', () => {
