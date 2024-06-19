@@ -11,9 +11,9 @@ import { login } from '../helpers/generalHelper';
 
 before(async () => {
 
-  console.log('===============================');
   const res = await login(process.env.EMAIL, process.env.PASSWORD);
   process.env.TOKEN = res.body.payload.token;
+  //console.log('===============================', res.body.payload.token);
 });
 
 

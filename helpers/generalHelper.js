@@ -42,5 +42,12 @@ export function register(data){
 }
 
 
+export function emailSearch(email){
+    return request('https://clientbase-server.herokuapp.com')
+    .post('/email/search')
+    .send({email: email})
+}
+
+
 
 
