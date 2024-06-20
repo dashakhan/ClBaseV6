@@ -4,7 +4,7 @@ import { expect } from 'chai';
 //import {request} from 'supertest' 
 const request = require('supertest')
 
-describe('verify email trim on sign up', () => {
+describe.only('verify email trim on sign up', () => {
   let res;
   const newEmail = '      user' + Date.now() + '@gmail.com    ';
   const trimmedEmail = newEmail.trim();
@@ -33,7 +33,7 @@ describe('verify email trim on sign up', () => {
 //2.confirm email-search page https://clientbase.us/email
 //3.login
 
-describe.only('email conformation', () => {
+describe('email conformation', () => {
     const newEmail = 'dash' + Date.now() + '@gmail.com'
     let res, str, endpoint
 
