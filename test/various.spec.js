@@ -52,7 +52,7 @@ describe('email conformation', () => {
 
     str = await generalHelper.emailSearch(newEmail)
    
-    endpoint = str.body.payload.items[0].message.split('\n')[4].split('https://clientbase.us')[1]
+    endpoint = str.body.payload.items[0].message.split('\n')[4].split('https://clientbase.pasv.us')[1]
 
     const confirmResponse = await request('https://clientbase-server-edu-dae6cac55393.herokuapp.com').get(endpoint).send()
 
