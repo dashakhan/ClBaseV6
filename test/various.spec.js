@@ -4,7 +4,7 @@ import { expect } from 'chai';
 //import {request} from 'supertest' 
 const request = require('supertest')
 
-describe.only('verify email trim on sign up', () => {
+describe('verify email trim on sign up', () => {
   let res;
   const newEmail = '      user' + Date.now() + '@gmail.com    ';
   const trimmedEmail = newEmail.trim();
@@ -49,24 +49,19 @@ describe('email conformation', () => {
     //actions that user allowed to make before conf
     //expect(res.body.payload.acl).to.eq(['user.auth','user.delete.any','user.update.any','companyAccount.update.own'])
 
-    // str = await request('https://clientbase-server.herokuapp.com')
-    // .post('/email/search')
-    // .send({email: newEmail})
+
     str = await generalHelper.emailSearch(newEmail)
-
-
+   
     endpoint = str.body.payload.items[0].message.split('\n')[4].split('https://clientbase.us')[1]
 
-    const confirmResponse = await request('https://clientbase-server.herokuapp.com').get(endpoint).send()
+    const confirmResponse = await request('https://clientbase-server-edu-dae6cac55393.herokuapp.com').get(endpoint).send()
 
     res = await generalHelper.login(newEmail, process.env.PASSWORD)
      //roles after conformation
-    //console.log(res.body.payload.user.roles)
+    console.log(res.body.payload.user.roles)
     expect(res.body.payload.user.roles).to.include('verified')
     //actions after conf
     //console.log(res.body.payload.acl) 
     expect(res.body.payload.acl).to.include('client.create.own')
-
-
  })
 });
